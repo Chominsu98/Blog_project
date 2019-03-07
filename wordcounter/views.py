@@ -23,5 +23,6 @@ def result(request):
             word_dictionary[word]+=1
         else:
             word_dictionary[word]=1
+ 
     create(request,"page_for_wordcount") #글을 읽어서 카운트하는 동시에 바로 create함수또한 호출을 하여 디비에 올린다.    
     return render(request,"result.html",{'sum':sum,'length':length,'full':text,"total":len(words),"dictionary":word_dictionary.items()})       
